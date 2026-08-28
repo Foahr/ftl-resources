@@ -1,0 +1,19 @@
+{
+  "powerin": {
+    "sounds": [
+      {
+        "name": "ftlaudio:power_up",
+        "volume": 10
+      }
+    ],
+    "replace": false,
+    "subtitle": "Power in"
+  },
+  "powerout": {
+    "sounds": [
+      "ftlaudio:power_down"
+    ],
+    "replace": false,
+    "subtitle": "Power out"
+  }
+}
