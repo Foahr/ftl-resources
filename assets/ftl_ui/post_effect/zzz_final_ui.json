@@ -1,0 +1,86 @@
+{
+  "targets": {
+    "swap": {}
+  },
+  "passes": [
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "ftl_ui:post/final_ui",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "minecraft:main"
+        },
+        {
+          "sampler_name": "Icon0",
+          "location": "ftl_ui:system_icons/weapons",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "sampler_name": "Icon1",
+          "location": "ftl_ui:system_icons/shields",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "sampler_name": "Icon2",
+          "location": "ftl_ui:system_icons/oxygen",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "sampler_name": "Icon3",
+          "location": "ftl_ui:system_icons/engines",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "sampler_name": "Icon4",
+          "location": "ftl_ui:system_icons/medbay",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "sampler_name": "PoweredCell",
+          "location": "ftl_ui:powered_cell",
+          "width": 16,
+          "height": 8
+        },
+        {
+          "sampler_name": "UnpoweredCell",
+          "location": "ftl_ui:unpowered_cell",
+          "width": 16,
+          "height": 8
+        }
+      ],
+      "output": "swap",
+      "uniforms": {}
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "minecraft:post/blit",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "swap"
+        }
+      ],
+      "output": "minecraft:main",
+      "uniforms": {
+        "BlitConfig": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "value": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

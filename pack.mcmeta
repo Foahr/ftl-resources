@@ -1,7 +1,14 @@
 {
-    "pack": {
-        "description": "resources for the ftl datapack",
-        "min_format": 88,
-        "max_format": 88
-    }
+  "pack": {
+    "min_format": 88,
+    "max_format": 88,
+    "description": [
+      "A ",
+      {
+        "text": "Sandstone",
+        "color": "gold"
+      },
+      " resource pack."
+    ]
+  }
 }

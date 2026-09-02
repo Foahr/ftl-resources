@@ -1,0 +1,78 @@
+{
+  "targets": {
+    "swap": {}
+  },
+  "passes": [
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "ftl_ui:post/channel_stamp",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "minecraft:main"
+        }
+      ],
+      "output": "swap",
+      "uniforms": {
+        "ChannelConfig": [
+          {
+            "name": "PixelOffset",
+            "type": "vec2",
+            "value": [
+              2,
+              2
+            ]
+          },
+          {
+            "name": "PixelSize",
+            "type": "vec2",
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "name": "ChannelMask",
+            "type": "vec4",
+            "value": [
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Value",
+            "type": "float",
+            "value": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "minecraft:post/blit",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "swap"
+        }
+      ],
+      "output": "minecraft:main",
+      "uniforms": {
+        "BlitConfig": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "value": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
